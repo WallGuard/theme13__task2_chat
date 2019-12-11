@@ -1,0 +1,49 @@
+{
+    "name": "chat",
+    "version": "0.9.0",
+    "description": "Theme-13 Task-2",
+    "main": "index.js",
+    "scripts": {
+      "dev": "webpack --mode development",
+      "build": "webpack --mode production",
+      "watch": "webpack --mode development --watch",
+      "start": "webpack-dev-server --hot --inline --module-bind 'css=style!css'",
+      "eslint": "./node_modules/.bin/eslint ./src/"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/WallGuard/theme13__task2_chat.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/WallGuard/theme13__task2_chat.git"
+    },
+    "homepage": "https://github.com/WallGuard/theme13__task2_chat#readme",
+    "devDependencies": {
+      "babel-core": "^6.26.3",
+      "babel-loader": "7.0.0",
+      "babel-preset-env": "^1.7.0",
+      "eslint": "^5.5.0",
+      "eslint-config-airbnb": "^17.1.0",
+      "eslint-plugin-import": "^2.14.0",
+      "eslint-plugin-jsx-a11y": "^6.1.1",
+      "eslint-plugin-react": "^7.11.1",
+      "node-sass": "^4.9.3",
+      "webpack": "^4.17.2",
+      "webpack-cli": "^3.1.0",
+      "webpack-dev-server": "^3.1.7",
+      "css-loader": "^1.0.0",
+      "sass": "^1.13.1",
+      "sass-loader": "^7.1.0",
+      "style-loader": "^0.23.0",
+      "file-loader": "^2.0.0",
+      "html-loader": "^0.5.5",
+      "html-webpack-plugin": "^3.2.0"
+    },
+    "dependencies": {
+      "chat-engine": "^0.9.19",
+      "pubnub": "^4.21.5"
+    }
+  }
+  

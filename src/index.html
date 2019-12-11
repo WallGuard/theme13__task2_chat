@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+<div class="container app">
+  <div class="people-list">
+    <div class="people-list__header">
+      <div class="user-name-input">
+        <input class="name-input" placeholder="Enter your nickname">
+      </div>
+      <div id="user-name" class="user-name invisible">
+        <span></span>
+      </div>
+    </div>
+    <div class="list-body">
+      <div class="list-name">
+        <span>Online</span>
+      </div>
+      <ul class="list"></ul>
+    </div>
+  </div>
+  <div class="chat">
+    <div class="chat__header">
+      <span>Messages</span>
+    </div>
+    <div id="message-place" class="message-place">
+      <template id="my-message">
+        <div class="my-message">
+          <div class="user-name">
+            <span>You</span>
+          </div>
+          <div class="message-text">
+            <span></span>
+          </div>
+        </div>
+      </template>
+      <template id="import-message">
+        <div class="import-message">
+          <div class="user-name">
+            <span></span>
+          </div>
+          <div class="message-text">
+            <span> test text</span>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div class="input-place">
+      <input class="message-input" disabled>
+      <button type="submit" class="message-btn">SEND</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+@import './utils/vars.scss';
+
+body {
+  font-family: 'Acme', sans-serif;
+  background-color:$body-color;
+}
+
+.container {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+  height: 700px;
+  border: 2px solid $header-color;
+  border-radius: 3px;
+}
+
+.people-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 30%;
+  border-right: 2px solid $header-color;
+
+  .people-list__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    height: 10%;
+    background-color: $main-blue;
+
+
+    .user-name-input {
+      text-align: center;
+      vertical-align: middle;
+
+      input {
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid $main-blue;
+        outline: none;
+      }
+    }
+
+    .user-name {
+      margin: auto;
+      text-align: center;
+
+      span {
+        font-size: 24px;
+        color: $online-color;
+      }
+    }
+  }
+
+  .list-body {
+    background-color: $grey-main;
+    height: 90%;
+
+    .list-name {
+      text-align: center;
+
+      span {
+        font-size: 24px;
+        color: $online-color;
+      }
+    }
+
+    ul {
+      color: $online-color;
+
+      li {
+        font-size: 19px;
+      }
+    }
+  }
+
+}
+
+.chat {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  .chat__header {
+    height: 10%;
+    background-color: $main-blue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 40px;
+      color: $white-font;
+    }
+  }
+
+  .message-place {
+    width: 100%;
+    height: 80%;
+    background-color: $grey-main;
+    padding: 15px 20px;
+    overflow: auto;
+  }
+
+  .input-place {
+    width: 100%;
+    height: 10%;
+    background-color: $grey-main;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .message-input {
+      box-sizing: border-box;
+      width: 70%;
+      height: 30px;
+      margin: 5px 15px;
+      border-radius: 10px;
+      border: 1px solid $main-blue;
+      padding: 5px 10px;
+      outline: none;
+    }
+
+    .message-btn {
+      width: 20%;
+      height: 30px;
+      margin: 5px 15px;
+      border-radius: 10px;
+      background-color: $main-blue;
+      color: $white-font;
+
+    }
+  }
+
+  .my-message {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .message-text {
+      margin-right: 20px;
+      padding: 10px 15px;
+      max-width: 70%;
+      border: 1px solid $main-blue;
+      border-radius: 20px;
+      background-color: $user-field;
+
+      span {
+        font-size: 20px;
+      }
+    }
+
+    .user-name {
+      max-width: 30%;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .import-message {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 8%;
+    font-size: 16px;
+    display: flex;
+
+
+
+    .message-text {
+      padding: 10px 15px;
+      max-width: 70%;
+      border: 1px solid $main-blue;
+      border-radius: 20px;
+      background-color: $white-field;
+
+      span {
+        font-size: 20px;
+      }
+    }
+
+    .user-name {
+      max-width: 30%;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.invisible {
+  display: none;
+}
