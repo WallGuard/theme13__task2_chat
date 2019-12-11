@@ -1,5 +1,4 @@
 /* eslint-disable no-undef,no-use-before-define */
-
 import './assets/scss/main.scss';
 import PubNub from 'pubnub';
 
@@ -8,6 +7,7 @@ const userNameInput = $('.name-input');
 const messageInput = $('.message-input');
 const messagePlace = document.getElementById('message-place');
 const userList = document.getElementsByClassName('list')[0];
+const users = [];
 
 const pubnubDemo = new PubNub({
   publishKey: 'pub-c-42f772e1-293c-43ca-a5f1-6b8f14ebbea0',
@@ -42,9 +42,15 @@ function addUserName(name) {
 function connecting() {
   pubnubDemo.addListener({
     message(message) {
-      if (!message.message.text && message.message.userName !== userName) {
-        addUser(message);
+      if (message.message.userName === userName) {
         return false;
+      }
+      if (!message.message.text) {
+        addUser(message.message.userName);
+        return false;
+      }
+      if (!users.find(item => item === message.message.userName)) {
+        addUser(message.message.userName);
       }
       createImportMessage(message);
       return false;
@@ -64,10 +70,11 @@ function connecting() {
 }
 
 
-function addUser(event) {
+function addUser(name) {
   const newLi = document.createElement('li');
-  newLi.innerHTML = event.message.userName;
+  newLi.innerHTML = name;
   userList.append(newLi);
+  users.push(name);
 }
 
 function createMyMessage(text) {
