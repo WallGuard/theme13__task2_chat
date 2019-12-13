@@ -33,13 +33,14 @@ div {
   width: 30%;
   border-right: 2px solid $header-color;
 
-  .people-list__header {
+  &__header {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 10px 20px;
     height: 10%;
     background-color: $main-blue;
+    border-bottom: 2px solid $header-color;
 
 
     .user-name-input {
@@ -96,13 +97,14 @@ div {
   flex-direction: column;
   flex-wrap: nowrap;
 
-  .chat__header {
+  &__header {
     height: 10%;
     background-color: $main-blue;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-bottom: 2px solid $header-color;
 
     span {
       font-size: 40px;

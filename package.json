@@ -8,14 +8,14 @@
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "start": "webpack-dev-server --hot --inline --module-bind 'css=style!css'",
-    "eslint": "./node_modules/.bin/eslint ./src/"
+    "lint": "./node_modules/.bin/eslint ./src/"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/WallGuard/theme13__task2_chat.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/WallGuard/theme13__task2_chat.git"
   },

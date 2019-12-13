@@ -1,17 +1,25 @@
-/* eslint-disable no-undef,no-use-before-define */
 import './assets/scss/main.scss';
 import PubNub from 'pubnub';
 
-let userName = null;
 const userNameInput = $('.name-input');
 const messageInput = $('.message-input');
 const messagePlace = document.getElementById('message-place');
 const userList = document.getElementsByClassName('list')[0];
 const users = [];
+const pubKey = 'pub-c-a3d794fc-411a-41c2-b67d-8534a21c99e0';
+const subKey = 'sub-c-59ca500a-1cba-11ea-ac22-ea7c703d46e3';
+let myUUID = localStorage.getItem(subKey + 'uuid')
 
-const pubnubDemo = new PubNub({
-  publishKey: 'pub-c-42f772e1-293c-43ca-a5f1-6b8f14ebbea0',
-  subscribeKey: 'sub-c-a07acfe6-b656-11e8-9de9-7af9a1823cc4',
+if (myUUID = null) {
+  myUUID = pubnub.uuid();
+}
+
+let userName = null;
+
+const pubnub = new PubNub({
+  publishKey: pubKey,
+  subscribeKey: subKey,
+  uuid: myUUID
 });
 
 messageInput.on('change', (event) => {
@@ -36,11 +44,11 @@ function addUserName(name) {
   $('#user-name').removeClass('invisible');
   messageInput.prop('disabled', false);
   messageInput.focus();
-  connecting();
+  connect();
 }
 
-function connecting() {
-  pubnubDemo.addListener({
+function connect() {
+  pubnub.addListener({
     message(message) {
       if (message.message.userName === userName) {
         return false;
@@ -57,15 +65,16 @@ function connecting() {
     },
   });
 
-  pubnubDemo.subscribe({
-    channels: ['testChannel'],
+  pubnub.subscribe({
+    channels: ['wallguardChanel'],
+    restore: true,
   });
 
-  pubnubDemo.publish({
+  pubnub.publish({
     message: {
       userName,
     },
-    channel: 'testChannel',
+    channel: 'wallguardChanel',
   });
 }
 
@@ -97,11 +106,11 @@ function createImportMessage(event) {
 }
 
 function sendMessage(text) {
-  pubnubDemo.publish({
+  pubnub.publish({
     message: {
       userName,
       text,
     },
-    channel: 'testChannel',
+    channel: 'wallguardChanel',
   });
 }
