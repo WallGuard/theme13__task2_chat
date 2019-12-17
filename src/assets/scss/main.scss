@@ -47,13 +47,15 @@ div {
       text-align: center;
       vertical-align: middle;
 
-      input {
+      .contact-list {
         padding: 10px 15px;
         font-size: 16px;
         border-radius: 10px;
         border: 1px solid $main-blue;
         outline: none;
-      }
+        font-size: 36px;
+        color: #eee3eb;
+    }
     }
 
     .user-name {
@@ -113,12 +115,26 @@ div {
   }
 
   .message-place {
+    display: flex;
     width: 100%;
     height: 80%;
     background-color: $grey-main;
     padding: 15px 20px;
     overflow: auto;
+
+    .user-name-input {
+      margin: 0 auto;
+      align-self: center;
+
+      input {
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid $main-blue;
+        outline: none;
+      }
   }
+}
 
   .input-place {
     width: 100%;

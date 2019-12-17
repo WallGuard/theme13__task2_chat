@@ -40,8 +40,7 @@ function addUserName(name) {
   userName = name;
   userNameInput.val('');
   userNameInput.addClass('invisible');
-  $('#user-name span').text(userName);
-  $('#user-name').removeClass('invisible');
+  addUser(name + ' (you)');
   messageInput.prop('disabled', false);
   messageInput.focus();
   connect();
